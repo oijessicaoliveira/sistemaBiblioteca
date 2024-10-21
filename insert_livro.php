@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  // Verifica se a página foi acess
 <head>
     <meta charset="UTF-8">  <!-- Define o charset para UTF-8, permitindo o uso de caracteres especiais. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Configura a visualização para dispositivos móveis. -->
+    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS externo -->
     <title>Cadastro de Livros</title>  <!-- Define o título da página. -->
 </head>
 <body>
