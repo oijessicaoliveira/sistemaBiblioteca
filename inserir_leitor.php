@@ -1,30 +1,28 @@
 <?php
-// Inclui a classe Database para conexão com o banco de dados
+// Inclui as classes necessárias
 include_once 'Database.php';
+include_once 'Leitor.php';
 
 // Cria a conexão com o banco de dados
 $database = new Database();
 $db = $database->getConnection();
 
-// Verifica se o formulário foi enviado
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {  // Verifica se o formulário foi enviado via POST
-    $nome = $_POST['nome'];  // Captura o nome do leitor
-    $email = $_POST['email'];  // Captura o email do leitor
-    $telefone = $_POST['telefone'];  // Captura o telefone do leitor
+// Verifica se o formulário foi enviado via POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Cria um novo objeto Leitor
+    $leitor = new Leitor($db);
+    
+    // Define os valores para o leitor a partir dos dados do formulário
+    $leitor->nome = $_POST['nome'];
+    $leitor->email = $_POST['email'];
+    $leitor->telefone = $_POST['telefone'];
 
-    // Insere o leitor na tabela leitores
-    $query = "INSERT INTO leitores (nome, email, telefone) VALUES (?, ?, ?)";
-    $stmt = $db->prepare($query);  // Prepara a consulta SQL para execução
-    $stmt->bind_param("sss", $nome, $email, $telefone);  // Associa os valores capturados aos parâmetros da consulta (strings)
-
-    if ($stmt->execute()) {  // Executa a consulta e verifica se foi bem-sucedida
+    // Tenta inserir o leitor usando o método da classe
+    if ($leitor->inserirLeitor()) {
         echo "Leitor inserido com sucesso!";
     } else {
-        echo "Erro ao inserir leitor: " . $stmt->error;  // Exibe uma mensagem de erro em caso de falha
+        echo "Erro ao inserir leitor.";
     }
-
-    $stmt->close();  // Fecha o comando SQL
-    $db->close();    // Fecha a conexão com o banco de dados
 }
 ?>
 
@@ -37,21 +35,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {  // Verifica se o formulário foi e
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Inserir Leitor</h1>  <!-- Cabeçalho da página -->
-    
-    <!-- Formulário para inserção de leitores -->
+    <h1>Inserir Leitor</h1>
+    <!-- Formulário para inserir leitores -->
     <form action="inserir_leitor.php" method="post">
         <label for="nome">Nome do Leitor:</label>
-        <input type="text" name="nome" id="nome" required><br><br>  <!-- Campo de texto para o nome do leitor -->
+        <input type="text" name="nome" id="nome" required><br><br>
 
         <label for="email">Email do Leitor:</label>
-        <input type="email" name="email" id="email" required><br><br>  <!-- Campo de texto para o email do leitor -->
+        <input type="email" name="email" id="email" required><br><br>
 
         <label for="telefone">Telefone do Leitor:</label>
-        <input type="text" name="telefone" id="telefone" required><br><br>  <!-- Campo de texto para o telefone do leitor -->
+        <input type="text" name="telefone" id="telefone" required><br><br>
 
-        <input type="submit" value="Inserir Leitor">  <!-- Botão para enviar o formulário -->
+        <input type="submit" value="Inserir Leitor">
     </form>
-    <a href="index.php">Voltar à página inicial</a>  <!-- Link para voltar à página inicial -->
+    <a href="index.php">Voltar à página inicial</a>
 </body>
 </html>
