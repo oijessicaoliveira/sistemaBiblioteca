@@ -1,0 +1,67 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;   /* Define a fonte usada na página para ser Arial, ou sans-serif como alternativa */
+    background-color: #f4f4f9;       /* Define uma cor de fundo suave e clara */
+    margin: 0;                       /* Remove margens padrão do navegador */
+    padding: 0;                      /* Remove espaçamentos padrão */
+    display: flex;                   /* Define o layout como flexbox para centralizar o conteúdo */
+    justify-content: center;         /* Centraliza horizontalmente os elementos no corpo */
+    align-items: center;             /* Centraliza verticalmente os elementos no corpo */
+    min-height: 100vh;               /* Faz com que o corpo ocupe pelo menos 100% da altura da tela do navegador */
+}
+
+h1 {
+    color: #333;                     /* Define a cor do texto do cabeçalho como um cinza escuro */
+    text-align: center;              /* Centraliza o texto do cabeçalho */
+}
+
+form {
+    background-color: #fff;          /* Define o fundo do formulário como branco */
+    padding: 20px;                   /* Adiciona espaçamento interno (padding) ao formulário */
+    border-radius: 8px;              /* Adiciona bordas arredondadas ao formulário */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Adiciona uma sombra leve ao redor do formulário */
+    max-width: 400px;                /* Limita a largura máxima do formulário a 400px */
+    width: 100%;                     /* Faz o formulário ocupar 100% da largura disponível até o limite de 400px */
+}
+
+label {
+    display: block;                  /* Faz com que os rótulos ocupem uma linha inteira */
+    margin-bottom: 10px;             /* Adiciona um espaçamento inferior entre o rótulo e o campo */
+    font-weight: bold;               /* Deixa o texto do rótulo em negrito */
+}
+
+input[type="text"], input[type="number"], input[type="date"], select {
+    width: 100%;                     /* Faz os campos ocuparem 100% da largura do formulário */
+    padding: 10px;                   /* Adiciona espaçamento interno aos campos */
+    margin-bottom: 20px;             /* Adiciona um espaçamento inferior entre os campos */
+    border: 1px solid #ccc;          /* Define uma borda fina e cinza clara ao redor dos campos */
+    border-radius: 4px;              /* Adiciona bordas levemente arredondadas */
+    font-size: 16px;                 /* Define o tamanho da fonte dos campos */
+}
+
+input[type="submit"] {
+    width: 100%;                     /* Faz o botão de envio ocupar 100% da largura disponível */
+    background-color: #762585;       /* Define o fundo do botão de envio como verde (sucesso) */
+    color: white;                    /* Define a cor do texto do botão como branco */
+    padding: 10px;                   /* Adiciona espaçamento interno ao botão */
+    border: none;                    /* Remove as bordas do botão */
+    border-radius: 4px;              /* Adiciona bordas levemente arredondadas ao botão */
+    font-size: 16px;                 /* Define o tamanho da fonte no botão */
+    cursor: pointer;                 /* Muda o cursor para "pointer" (mãozinha) ao passar sobre o botão */
+}
+
+input[type="submit"]:hover {
+    background-color: #c160c6;       /* Muda o fundo do botão quando o mouse passa sobre ele (efeito hover) */
+}
+
+a {
+    display: block;                  /* Faz com que o link ocupe uma linha inteira */
+    text-align: center;              /* Centraliza o texto do link */
+    margin-top: 20px;                /* Adiciona um espaçamento superior entre o link e o conteúdo anterior */
+    color: #007bff;                  /* Define a cor do link como azul */
+    text-decoration: none;           /* Remove o sublinhado do link */
+}
+
+a:hover {
+    text-decoration: underline;      /* Adiciona o sublinhado quando o mouse passa sobre o link (efeito hover) */
+}

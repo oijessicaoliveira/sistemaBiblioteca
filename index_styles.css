@@ -1,0 +1,73 @@
+/* Estilo global do corpo */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;  /* Fonte mais profissional */
+    background-color: #f7f7f7;  /* Cor de fundo suave */
+    margin: 0;  /* Remove margens padrão */
+    padding: 0;  /* Remove espaçamentos padrão */
+    display: flex;  /* Ativa o flexbox */
+    flex-direction: column;  /* Organiza o conteúdo em coluna, com o h1 no topo */
+    justify-content: flex-start;  /* Alinha o conteúdo no topo */
+    align-items: center;  /* Centraliza horizontalmente o conteúdo */
+    min-height: 100vh;  /* A página ocupa 100% da altura da tela */
+}
+
+/* Estilo para o cabeçalho */
+h1 {
+    color: #2c3e50;  /* Azul escuro e profissional */
+    text-align: center;  /* Centraliza o texto do título */
+    font-size: 2.2em;  /* Tamanho adequado e equilibrado */
+    font-weight: 400;  /* Peso médio, mais elegante */
+    margin-top: 40px;  /* Espaçamento superior para separar o título do topo da página */
+    margin-bottom: 40px;  /* Espaçamento inferior para separá-lo dos links */
+    letter-spacing: 0.5px;  /* Espaçamento suave entre as letras */
+}
+
+/* Estilo para a lista de links */
+ul {
+    list-style: none;  /* Remove os marcadores de lista padrão */
+    padding: 0;  /* Remove o padding interno */
+    margin: 0;  /* Remove o margin externo */
+}
+
+/* Estilo para os itens da lista */
+li {
+    margin-bottom: 20px;  /* Adiciona espaçamento inferior entre os links */
+}
+
+/* Estilo dos links (botões) */
+a {
+    display: inline-block;  /* Faz o link se comportar como um bloco */
+    text-align: center;  /* Centraliza o texto dentro do link */
+    background-color: #501262;  /* Cor dos botões */
+    color: white;  /* Texto branco */
+    padding: 15px 30px;  /* Espaçamento interno, com foco em conforto visual */
+    border-radius: 10px;  /* Bordas arredondadas para dar um visual moderno */
+    text-decoration: none;  /* Remove o sublinhado padrão dos links */
+    font-size: 1.1em;  /* Tamanho da fonte levemente aumentado para legibilidade */
+    font-weight: 500;  /* Peso da fonte equilibrado */
+    transition: background-color 0.3s ease, transform 0.2s ease;  /* Transições suaves para efeito de hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave para criar profundidade */
+}
+
+/* Estilo do hover para os links */
+a:hover {
+    background-color: #9447ae;  /* Muda para um lilás mais escuro no hover */
+    transform: translateY(-3px);  /* Faz o botão "levantar" levemente quando o mouse passa */
+}
+
+/* Estilo de foco para acessibilidade */
+a:focus {
+    outline: none;  /* Remove a borda padrão de foco */
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.4);  /* Borda suave ao focar */
+}
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 600px) {
+    a {
+        width: 100%;  /* Links ocupam 100% da largura em dispositivos móveis */
+    }
+
+    h1 {
+        font-size: 1.8em;  /* Ajusta o tamanho do título para telas menores */
+    }
+}
